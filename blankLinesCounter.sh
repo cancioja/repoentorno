@@ -2,7 +2,7 @@ clear
 echo "---------------------------------------------------"
 echo "        Contador de líneas en blanco)"
 echo "---------------------------------------------------"
-echo "                 EJERCICIO  5"
+echo "                  EJERCICIO  5"
 echo "---------------------------------------------------"
 
 # ^$ es una expresión regular que sólo coincide con una línea en blanco (un inicio de línea seguido de un final de línea)
