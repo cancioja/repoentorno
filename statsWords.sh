@@ -5,14 +5,14 @@ echo "EJERCICIO  1"
 echo "Indicador estadístico de longitud de palabras (la más corta, la más larga y el promedio de longitud)"
 echo "----------------------------------------------------------"
 
-grep -Eio '[[:alpha:]]+' Textoprueba.txt|sort|uniq -i  > palabras.txt   # < LOS NUMEROS EN EL TEXTO NO SE CONSIDERAN WORDS >
-
+grep -Eio '[[:alpha:]]+' Textoprueba.txt|sort|uniq -i  > palabras.txt   # < LOS NUMEROS EN EL TEXTO NO SE CONSIDERAN WORDS, SI SE LO DESEA SE CAMBIA
+                                                                        #   SE CAMBIA LA REGEX POR :allnum:"  
 #--------------------------------------------------------------
 # OTRA MANERA DE FILTRAR LAS PALABRAS DEL TEXTO
 #cat Textoprueba.txt|tr -cs "'[:alpha:]áéíóú" "\n"| sort | uniq -i > palabras.txt
 #--------------------------------------------------------------
-cat palabras.txt    # SACAR EN DEFINITIVO
 
+cat palabras.txt
 declare -a array_palabras  # se declara array_palabras como una variable de tipo array
 i=0     # inicializo el contador
 maxlen=0
@@ -35,10 +35,7 @@ for longitud in "${array_palabras[@]}"
 do
 
 if [ $longitud -lt $minlen ]
-   then echo \n "En bucle $longitud"  #SACAR
-        minlen=$longitud
-        echo "Min len en bucle $minlen" #SACAR
-fi        
+   then minlen=$longitud; fi
 
 totallong+=$longitud
 done
