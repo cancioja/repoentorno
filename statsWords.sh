@@ -1,9 +1,10 @@
 #!/bin/bash     #VER SI ES NECESARIO AL LLAMAR EL SCRIPT
 clear
-echo "----------------------------------------------------------"
+echo "-------------------------------------------------------------"
 echo "EJERCICIO  1"
-echo "Indicador estadístico de longitud de palabras (la más corta, la más larga y el promedio de longitud)"
-echo "----------------------------------------------------------"
+echo "     Indicador estadístico de longitud de palabras"
+echo "(la más corta, la más larga y el promedio de longitud)"
+echo "-------------------------------------------------------------"
 
 grep -Eio '[[:alpha:]]+' Textoprueba.txt|sort|uniq -i  > palabras.txt   # < LOS NUMEROS EN EL TEXTO NO SE CONSIDERAN WORDS, SI SE LO DESEA SE CAMBIA
                                                                         #   SE CAMBIA LA REGEX POR :allnum:"  
@@ -12,7 +13,7 @@ grep -Eio '[[:alpha:]]+' Textoprueba.txt|sort|uniq -i  > palabras.txt   # < LOS 
 #cat Textoprueba.txt|tr -cs "'[:alpha:]áéíóú" "\n"| sort | uniq -i > palabras.txt
 #--------------------------------------------------------------
 
-cat palabras.txt
+
 declare -a array_palabras  # se declara array_palabras como una variable de tipo array
 i=0     # inicializo el contador
 maxlen=0
