@@ -9,8 +9,6 @@ echo "---------------------------------------------------------- "
 echo
 
 grep -E '[a-z]' Textoprueba.txt|tr -d "\n"|tr -t "\." "\n" > oraciones.txt
-cat oraciones.txt   #SACAR ESTA LINEA EN SCRIPT DEFITIVO
-
 
 
 declare -a array_lineas  # declaro array_lineas como una variable de tipo array
